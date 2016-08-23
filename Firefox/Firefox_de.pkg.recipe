@@ -92,7 +92,7 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>Evernote.pkg.ST</string>
+					<string>Firefox.pkg.RK</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
