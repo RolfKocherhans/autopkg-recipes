@@ -1,8 +1,8 @@
 #!/bin/bash
 
 downloadLink=`/usr/bin/osascript << EOT
---•• extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
-set ftpServer to "ftp://public.dhe.ibm.com"
+--••# extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
+#set ftpServer to "ftp://public.dhe.ibm.com"
 set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/"
 set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
 set folderNames to paragraphs of (do shell script shellCommand)
