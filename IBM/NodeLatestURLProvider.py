@@ -40,8 +40,7 @@ class NodeLatestURLProvider(Processor):
     __doc__ = description
         
         
-        
-        
+    def main(self):
     url = "ftp://public.dhe.ibm.com/storage/tivoli-storage-management/maintenance/client/v7r1/Mac/v716/7.1.6.0-TIV-TSMBAC-Mac.dmg"
         
 
