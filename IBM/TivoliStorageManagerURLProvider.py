@@ -25,8 +25,6 @@ set delimitedList to every text item of folderNames
 set fileNameWholeLine to text item 3 of delimitedList
 
 --•• # extract the file name from the line conating it e.g. 7.1.6.0-TIV-TSMBAC-Mac.dmg
---•• # add this info to the URL and go one levels deeper and extract the file name e.g. 7.1.6.0-TIV-TSMBAC-Mac.dmg
---•• # extract the file name from the line conating it e.g. 7.1.6.0-TIV-TSMBAC-Mac.dmg
 set AppleScript's text item delimiters to {space}
 set delimitedList to every text item of fileNameWholeLine
 set fileName to last text item of delimitedList
