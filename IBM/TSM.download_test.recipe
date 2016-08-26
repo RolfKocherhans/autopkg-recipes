@@ -4,13 +4,6 @@
 <dict>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download_test.TivoliStorageManager</string>
-	<key>Input</key>
-	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>ftp://public.dhe.ibm.com/storage/tivoli-storage-management/maintenance/client/v7r1/Mac/v716/7.1.6.0-TIV-TSMBAC-Mac.dmg</string>
-		<key>NAME</key>
-		<string>tivoli-storage-manager</string>
-	</dict>
 	<key>Process</key>
 	<array>
 		<dict>
