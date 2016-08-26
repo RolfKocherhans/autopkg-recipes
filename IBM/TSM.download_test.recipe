@@ -16,6 +16,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>product_name</key>
+				<string>TivoliStorageManager</string>
+			</dict>
+			<key>Processor</key>
+			<string>NodeLatestURLProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
