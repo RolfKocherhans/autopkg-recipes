@@ -15,6 +15,8 @@
 # limitations under the License.
 
 
+from autopkglib import Processor, ProcessorError
+import subprocess
 import os
 
 
@@ -40,10 +42,8 @@ class NodeLatestURLProvider(Processor):
         
         
         
-        url = "ftp://public.dhe.ibm.com/storage/tivoli-storage-management/maintenance/client/v7r1/Mac/v716/7.1.6.0-TIV-TSMBAC-Mac.dmg"
+    url = "ftp://public.dhe.ibm.com/storage/tivoli-storage-management/maintenance/client/v7r1/Mac/v716/7.1.6.0-TIV-TSMBAC-Mac.dmg"
         
-        
-   
 
 if __name__ == '__main__':
     processor = NodeLatestURLProvider()
