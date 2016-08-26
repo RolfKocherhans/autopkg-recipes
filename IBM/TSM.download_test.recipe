@@ -4,6 +4,11 @@
 <dict>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download_test.TivoliStorageManager</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>TivoliStorageManager</string>
+	</dict>
 	<key>Process</key>
 	<array>
 		<dict>
