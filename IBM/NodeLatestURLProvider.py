@@ -41,10 +41,7 @@ class NodeLatestURLProvider(Processor):
     
     
     def main(self):
-        if self.env["type"] == 'LTS':
-            url = 'https://nodejs.org/dist/latest-v4.x'
-        else:
-            url = 'https://nodejs.org/dist/latest'
+        url = 'ftp://public.dhe.ibm.com/storage/tivoli-storage-management/maintenance/client/v7r1/Mac/v716/7.1.6.0-TIV-TSMBAC-Mac.dmg'
         self.env["url"] = url      
    
 
