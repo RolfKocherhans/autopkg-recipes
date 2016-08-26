@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Copyright 2015 Gerard kok
+# Copyright 2016 Rolf Kocherhans
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,9 +39,9 @@ class NodeLatestURLProvider(Processor):
     
     __doc__ = description
     
-######### Start of the AppleScript part ######### 
 
     def main(self):
+    ######### Start of the AppleScript part #########
         url = """osascript -e '
         -- # extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
         set ftpServer to "ftp://public.dhe.ibm.com"
@@ -72,8 +72,9 @@ class NodeLatestURLProvider(Processor):
         set fileName to last text item of delimitedList
         
         -- # create download link
-        set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName"'"""
-#########  End of the AppleScript part ######### 
+        set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName
+        "'"""
+    #########  End of the AppleScript part ######### 
         self.env["url"] = url      
 
 
