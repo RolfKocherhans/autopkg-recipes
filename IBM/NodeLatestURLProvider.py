@@ -42,30 +42,31 @@ class NodeLatestURLProvider(Processor):
     
     def main(self):
         url = """osascript -e '
+        --•• extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
         set ftpServer to "ftp://public.dhe.ibm.com"
-set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/"
-set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
-set folderNames to paragraphs of (do shell script shellCommand)
-set varMajorVersion to last word of last item of folderNames --as string
+        set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/"
+        set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
+        set folderNames to paragraphs of (do shell script shellCommand)
+        set varMajorVersion to last word of last item of folderNames --as string
 
-set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/"
-set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
-set folderNames to paragraphs of (do shell script shellCommand)
-set varMinorVersion to last word of last item of folderNames --as string
+        set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/"
+        set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
+        set folderNames to paragraphs of (do shell script shellCommand)
+        set varMinorVersion to last word of last item of folderNames --as string
 
-set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/"
-set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
-set folderNames to paragraphs of (do shell script shellCommand)
+        set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/"
+        set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
+        set folderNames to paragraphs of (do shell script shellCommand)
 
-set AppleScript's text item delimiters to {space}
-set delimitedList to every text item of folderNames
-set fileNameWholeLine to text item 3 of delimitedList
+        set AppleScript's text item delimiters to {space}
+        set delimitedList to every text item of folderNames
+        set fileNameWholeLine to text item 3 of delimitedList
 
-set AppleScript's text item delimiters to {space}
-set delimitedList to every text item of fileNameWholeLine
-set fileName to last text item of delimitedList
+        set AppleScript's text item delimiters to {space}
+        set delimitedList to every text item of fileNameWholeLine
+        set fileName to last text item of delimitedList
 
-set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName"'"""
+        set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName"'"""
         self.env["url"] = url      
    
 
