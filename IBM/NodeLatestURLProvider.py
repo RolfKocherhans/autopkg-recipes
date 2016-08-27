@@ -73,8 +73,7 @@ class NodeLatestURLProvider(Processor):
         -- create download link
         set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName
         '''])
-        self.env["url"] = url      
-
+        self.env["url"] = url + "w"
 
 if __name__ == '__main__':
     processor = NodeLatestURLProvider()
