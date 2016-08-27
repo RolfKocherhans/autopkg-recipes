@@ -51,4 +51,4 @@ set fileName to last text item of delimitedList
 set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName
 '''])
 
-print(url.decode('UTF-8'))
+# print(url.decode('UTF-8'))
