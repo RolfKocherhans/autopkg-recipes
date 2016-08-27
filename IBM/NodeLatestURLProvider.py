@@ -31,9 +31,8 @@ class NodeLatestURLProvider(Processor):
         }
     }
     input_variables = {
-        "type": {
-            "required": False,
-            "description": "type of download; either 'LTS' or 'Stable', default: 'Stable'.",
+        "url": {
+            "description": "download URL.",
         }
     }
     
