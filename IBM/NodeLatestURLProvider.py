@@ -41,7 +41,7 @@ class NodeLatestURLProvider(Processor):
     
 
     def main(self):
-        url = """osascript -e '
+        urld = """osascript -e '
         -- ######### Start of the AppleScript part #########
         -- # extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
         set ftpServer to "ftp://public.dhe.ibm.com"
@@ -75,7 +75,7 @@ class NodeLatestURLProvider(Processor):
         set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName
         -- #########  End of the AppleScript part ######### 
         "'"""
-#        self.env["url"] = url      
+        self.env["urld"] = url      
 
 
 if __name__ == '__main__':
