@@ -24,6 +24,20 @@ __all__ = ["NodeLatestURLProvider"]
 
 
 class NodeLatestURLProvider(Processor):
+    description = "Returns url to the latest Tivoli Storage Manager package."
+    input_variables = {
+        "type": {
+            "required": False,
+            "description": "type of download; either 'LTS' or 'Stable', default: 'Stable'.",
+        }
+    }
+    output_variables = {
+        "url": {
+            "description": "download URL.",
+        }
+    }
+    
+    __doc__ = description
     
 
     def main(self):
