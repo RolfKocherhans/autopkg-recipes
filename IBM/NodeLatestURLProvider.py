@@ -72,6 +72,7 @@ class NodeLatestURLProvider(Processor):
 
         -- create download link
         set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName
+        text 1 thru -2 of downloadLink
         '''])
         self.env["url"] = url      
 
