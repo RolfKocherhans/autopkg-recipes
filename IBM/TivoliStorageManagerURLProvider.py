@@ -20,10 +20,10 @@ import subprocess
 import os
 
 
-__all__ = ["NodeLatestURLProvider"]
+__all__ = ["TivoliStorageManagerURLProvider"]
 
 
-class NodeLatestURLProvider(Processor):
+class TivoliStorageManagerURLProvider(Processor):
     description = "Returns url to the latest Tivoli Storage Manager package."
     input_variables = {
         "type": {
@@ -41,20 +41,21 @@ class NodeLatestURLProvider(Processor):
     
 
     def main(self):
-        url = """osascript -e '
+        url = subprocess.check_output(['osascript', '-e', r'''
         -- ######### Start of the AppleScript part #########
+        
         -- # extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
         set ftpServer to "ftp://public.dhe.ibm.com"
         set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/"
         set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
         set folderNames to paragraphs of (do shell script shellCommand)
-        set varMajorVersion to last word of last item of folderNames --as string
+        set varMajorVersion to last word of last item of folderNames
         
         -- # add this info to the URL and go two levels deeper to extract the minor "Tivoli Storage Manager" version e.g. v713,v714,v716 - v716
         set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/"
         set shellCommand to "curl " & quoted form of (ftpServer & ftpDirectory)
         set folderNames to paragraphs of (do shell script shellCommand)
-        set varMinorVersion to last word of last item of folderNames --as string
+        set varMinorVersion to last word of last item of folderNames
         
         -- # add this info to the URL and go one levels deeper and extrct the file name e.g. 7.1.6.0-TIV-TSMBAC-Mac.dmg
         set ftpDirectory to "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/"
@@ -73,11 +74,12 @@ class NodeLatestURLProvider(Processor):
         
         -- # create download link
         set downloadLink to ftpServer & "/storage/tivoli-storage-management/maintenance/client/" & varMajorVersion & "/Mac/" & varMinorVersion & "/" & fileName
-        -- #########  End of the AppleScript part ######### 
-        "'"""
-        self.env["url"] = url      
-
+        
+        -- #########  End of the AppleScript part #########
+        '''])
+        url = url[:-1]
+        self.env["url"] = url
 
 if __name__ == '__main__':
-    processor = NodeLatestURLProvider()
+    processor = TivoliStorageManagerURLProvider()
     processor.execute_shell()
