@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download_test.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.download.TivoliStorageManager.test</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -18,7 +18,7 @@
 				<string>TivoliStorageManager</string>
 			</dict>
 			<key>Processor</key>
-			<string>NodeLatestURLProvider</string>
+			<string>TivoliStorageManagerURLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
