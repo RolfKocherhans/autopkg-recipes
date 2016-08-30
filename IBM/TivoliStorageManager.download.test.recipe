@@ -40,7 +40,7 @@
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
 		</dict>
-			<dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
@@ -51,7 +51,7 @@
 			<key>Processor</key>
 			<string>PkgPayloadUnpacker</string>
 		</dict>
-			<dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
@@ -63,6 +63,17 @@
 			<string>Get version from the pkg</string>
 			<key>Processor</key>
 			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%/*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
 		</dict>
 	</array>
 </dict>
