@@ -3,23 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.download_test.TivoliStorageManager</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>ftp://public.dhe.ibm.com/storage/tivoli-storage-management/maintenance/client/v7r1/Mac/v716/7.1.6.0-TIV-TSMBAC-Mac.dmg</string>
 		<key>NAME</key>
-		<string>tivoli-storage-manager</string>
+		<string>TivoliStorageManager</string>
 	</dict>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>product_name</key>
+				<string>TivoliStorageManager</string>
+			</dict>
+			<key>Processor</key>
+			<string>TivoliStorageManagerURLProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
