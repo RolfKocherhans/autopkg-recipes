@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Download recipe for Fetch.  Downloads the latest Fetch from Fetch Softworks website.</string>
     <key>Identifier</key>
-    <string>com.github.jleggat.download.Fetch</string>
+    <string>com.github.rolfkocherhans.download.Fetch</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
