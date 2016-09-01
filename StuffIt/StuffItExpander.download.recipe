@@ -10,7 +10,7 @@
 	<dict>
 		<key>SPARKLE_FEED_URL</key>
 		<string>http://www.stuffit.com/update_rss/NEU/StuffItExpanderUpdates.xml</string>
-		<key>name</key>
+		<key>NAME</key>
 		<string>StuffItExpander</string>
 	</dict>
 	<key>MinimumVersion</key>
