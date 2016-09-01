@@ -2,17 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Description</key>
+	<string>Downloads latest version of StuffIt Expander and builds a pkg.</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.pkg.StuffItExpander</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>StuffItExpander</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.stuffit.com/update_rss/NEU/StuffItExpanderUpdates.xml</string>
 	</dict>
-	<key>MinimumVersion</key>
-	<string>0.5</string>
 	<key>ParentRecipe</key>
 	<string>com.github.rolfkocherhans.download.StuffItExpander</string>
 	<key>Process</key>
@@ -20,15 +18,40 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pkgdirs</key>
+				<dict>
+					<key>Applications</key>
+					<string>0775</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>archive_path</key>
 				<string>%pathname%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
 				<key>purge_destination</key>
 				<true/>
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications/FileZilla.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -50,11 +73,11 @@
 					<string>com.stuffit.StuffIt-Expander.pkg</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
-					<key>pkgdir</key>
-					<string>%RECIPE_CACHE_DIR%</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+					<key>version</key>
+					<string>%version%</string>
 				</dict>
-				<key>pkgname</key>
-				<string>%NAME%-%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
