@@ -2,17 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Description</key>
+	<string>Downloads the latest StuffIt Expander.</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.StuffItExpander.download</string>
+	<string>com.github.rolfkocherhans.download.StuffItExpander</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>StuffItExpander</string>
-		<key>SPARKLE_FEED_URL</key>
-		<string>http://www.stuffit.com/update_rss/NEU/StuffItExpanderUpdates.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.1</string>
+	<string>0.5</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -27,10 +27,6 @@
 		<dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
 </dict>
