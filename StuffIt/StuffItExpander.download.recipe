@@ -8,8 +8,10 @@
 	<string>com.github.rolfkocherhans.download.StuffItExpander</string>
 	<key>Input</key>
 	<dict>
-		<key>NAME</key>
+		<key>name</key>
 		<string>StuffItExpander</string>
+		<key>sparkle_feed_url</key>
+		<string>http://www.stuffit.com/update_rss/NEU/StuffItExpanderUpdates.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5</string>
@@ -19,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>appcast_url</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<string>%sparkle_feed_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>SparkleUpdateInfoProvider</string>
