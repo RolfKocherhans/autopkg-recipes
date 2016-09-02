@@ -44,6 +44,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>file_content</key>
 				<string>AutoPkg Variables:
 				SEARCH_PATTERN=%SEARCH_PATTERN%
@@ -56,17 +67,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%%match%</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
