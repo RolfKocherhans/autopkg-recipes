@@ -25,6 +25,17 @@
 				<key>re_pattern</key>
 				<string>%SEARCH_PATTERN%</string>
 				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN%</string>
+				<key>url</key>
 				<string>%DOWNLOAD_URL%%match%</string>
 			</dict>
 			<key>Processor</key>
@@ -40,6 +51,20 @@
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>AutoPkg Variables:
+				SPARKLE_FEED_URL=%SPARKLE_FEED_URL%
+				Name=%NAME%
+				Version=%version%</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
