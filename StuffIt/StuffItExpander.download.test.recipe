@@ -39,7 +39,8 @@
 			<key>Arguments</key>
 			<dict>
 				<key>file_content</key>
-				<string>SPARKLE_FEED_URL=%SPARKLE_FEED_URL%
+				<string>AutoPkg Variables:
+				SPARKLE_FEED_URL=%SPARKLE_FEED_URL%
 				Name=%NAME%
 				Version=%version%</string>
 				<key>file_mode</key>
