@@ -43,8 +43,6 @@
 				SPARKLE_FEED_URL=%SPARKLE_FEED_URL%
 				Name=%NAME%
 				Version=%version%</string>
-				<key>file_mode</key>
-				<string>0755</string>
 				<key>file_path</key>
 				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
 			</dict>
