@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of VMware Tools and extracts the installer package.</string>
 	<key>Identifier</key>
-	<string>com.github.rtrouton.pkg.VMwareTools</string>
+	<string>com.github.rolfkocherhans.pkg.VMwareTools</string>
 	<key>Input</key>
 	<dict>
 	</dict>
