@@ -34,7 +34,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>file_content</key>
-				<string>%SPARKLE_FEED_URL%</string>
+				<string>SPARKLE_FEED_URL=%SPARKLE_FEED_URL%</string>
 				<key>file_mode</key>
 				<string>0755</string>
 				<key>file_path</key>
