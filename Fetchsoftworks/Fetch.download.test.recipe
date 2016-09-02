@@ -57,8 +57,10 @@
 			<dict>
 				<key>file_content</key>
 				<string>AutoPkg Variables:
-				SPARKLE_FEED_URL=%SPARKLE_FEED_URL%
-				Name=%NAME%
+				SEARCH_PATTERN=%SEARCH_PATTERN%
+				DOWNLOAD_URL=%DOWNLOAD_URL%
+				match=%match%
+				NAME=%NAME%
 				Version=%version%</string>
 				<key>file_path</key>
 				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
