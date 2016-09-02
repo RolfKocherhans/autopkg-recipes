@@ -21,9 +21,9 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://fetchsoftworks.com</string>
+                <string>http://fetchsoftworks.com%match%</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http://fetchsoftworks.com[^"]+\.dmg[^"]*)</string>
+                <string>[^"]+\.dmg[^"]*</string>
             </dict>
         </dict>
         <dict>
