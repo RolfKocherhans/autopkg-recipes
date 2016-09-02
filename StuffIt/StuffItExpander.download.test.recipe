@@ -31,10 +31,6 @@
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>file_content</key>
@@ -52,6 +48,10 @@ install_dir=`dirname $0`
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
 </dict>
