@@ -9,10 +9,10 @@
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>Adium</string>
+        <string>Fetch</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.9</string>
+    <string>0.5</string>
     <key>Process</key>
     <array>
         <dict>
@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://fetchsoftworks.com</string>
                 <key>re_pattern</key>
-                <string>[^"]+\.dmg[^"]*</string>
+                <string>http://fetchsoftworks.com[^"]+\.dmg[^"]*</string>
             </dict>
         </dict>
         <dict>
