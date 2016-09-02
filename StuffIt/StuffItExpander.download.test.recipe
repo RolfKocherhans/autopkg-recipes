@@ -44,7 +44,7 @@ install_dir=`dirname $0`
 				<key>file_mode</key>
 				<string>0755</string>
 				<key>file_path</key>
-				<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
+				<string>%RECIPE_CACHE_DIR%/Variables.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
