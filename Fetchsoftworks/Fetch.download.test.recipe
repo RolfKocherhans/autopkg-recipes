@@ -25,7 +25,7 @@
 				<key>re_pattern</key>
 				<string>%SEARCH_PATTERN%</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>%DOWNLOAD_URL%%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
