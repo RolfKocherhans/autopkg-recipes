@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Download recipe for Fetch.  Downloads the latest Fetch from Fetch Softworks website.</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.Fetch.test</string>
+	<string>com.github.rolfkocherhans.download.Fetch</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
@@ -33,6 +33,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN%</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>file_content</key>
 				<string>AutoPkg Variables:
 				SEARCH_PATTERN=%SEARCH_PATTERN%
@@ -45,17 +56,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>%SEARCH_PATTERN%</string>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%%match%</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
