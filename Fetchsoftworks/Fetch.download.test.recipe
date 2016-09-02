@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
-		<string>http://www.fetchsoftworks.com</string>
+		<string>http://fetchsoftworks.com</string>
 		<key>NAME</key>
 		<string>Fetch</string>
 		<key>SEARCH_PATTERN</key>
@@ -25,18 +25,7 @@
 				<key>re_pattern</key>
 				<string>%SEARCH_PATTERN%</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>re_pattern</key>
-				<string>%SEARCH_PATTERN%</string>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%%match%</string>
+				<string>%DOWNLOAD_URL%%SEARCH_PATTERN%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
