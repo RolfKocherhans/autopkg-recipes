@@ -5,7 +5,7 @@
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download.VMwareTools</string>
 	<key>Description</key>
-	<string>Downloads VMware Darwin ISO. Adapted from Jesse Peterson's VMwareTools.munki recipe</string>
+	<string>Downloads VMware Darwin ISO. Adapted from Jesse Peterson's & rtrouton VMwareTools.munki recipe</string>
 	<key>Process</key>
 	<array>
 		<dict>
