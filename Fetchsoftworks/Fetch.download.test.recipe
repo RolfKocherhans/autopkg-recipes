@@ -23,7 +23,7 @@
                 <key>url</key>
                 <string>http://fetchsoftworks.com</string>
                 <key>re_pattern</key>
-                <string>http://fetchsoftworks.com[^"]+\.dmg[^"]*</string>
+                <string>http://fetchsoftworks.com/[^"]+\.dmg[^"]*</string>
             </dict>
         </dict>
         <dict>
