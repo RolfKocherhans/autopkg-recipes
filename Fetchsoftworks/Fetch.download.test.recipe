@@ -40,8 +40,18 @@
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>AutoPkg Variables:
+				DOWNLOAD_URL=%DOWNLOAD_URL%
+				Name=%NAME%
+				match=%match%</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
+			</dict>
 			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
+			<string>FileCreator</string>
 		</dict>
 	</array>
 </dict>
