@@ -2,43 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads latest version of Adium.</string>
-    <key>Identifier</key>
-    <string>com.github.rolfkocherhans.download.Fetch.test</string>
-    <key>Input</key>
-    <dict>
-        <key>NAME</key>
-        <string>Fetch</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.5</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://fetchsoftworks.com</string>
-                <key>re_pattern</key>
-                <string>[^"]+\.dmg[^"]*</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+	<key>Comment</key>
+	<string>ftech dowload !</string>
+	<key>Description</key>
+	<string>Downloads the latest version of fetch</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.download.Fetch.test</string>
+	<key>Input</key>
+	<dict>
+		<key>DOWNLOAD_URL</key>
+		<string>http://fetchsoftworks.com</string>
+		<key>NAME</key>
+		<string>Fetch</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>[^"]+\.dmg[^"]*</string>
+				<key>url</key>
+				<string>http://fetchsoftworks.com</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%%match%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
 </dict>
 </plist>
