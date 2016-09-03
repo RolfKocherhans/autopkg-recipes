@@ -46,7 +46,8 @@
 				<string>AutoPkg Variables:
 				DOWNLOAD_URL=%DOWNLOAD_URL%
 				Name=%NAME%
-				match=%match%</string>
+				match=%match%
+				url=%DOWNLOAD_URL%%match%</string>
 				<key>file_path</key>
 				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
 			</dict>
