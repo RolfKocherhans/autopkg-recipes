@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>Fetch_[0-9]+(\.[0-9]?\.?[0-9]?)?+.dmg</string>
+				<string>Fetch_*.dmg</string>
 				<key>url</key>
 				<string>http://fetchsoftworks.com</string>
 			</dict>
