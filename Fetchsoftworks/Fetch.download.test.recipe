@@ -43,7 +43,7 @@
 				<key>file_content</key>
 				<string>AutoPkg Variables:
 				DOWNLOAD_URL=%DOWNLOAD_URL%
-				Name=last_modified
+				Name=%Name%
 				match=%match%
 				url=%DOWNLOAD_URL%%match%</string>
 				<key>file_path</key>
