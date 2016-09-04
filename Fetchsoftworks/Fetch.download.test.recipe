@@ -33,6 +33,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>file_content</key>
 				<string>AutoPkg Variables:
 				DOWNLOAD_URL=%DOWNLOAD_URL%
@@ -44,15 +53,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%%match%.dmg</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 		</dict>
 	</array>
 </dict>
