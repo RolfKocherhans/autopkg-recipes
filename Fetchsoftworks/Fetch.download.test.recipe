@@ -45,8 +45,7 @@
 				DOWNLOAD_URL=%DOWNLOAD_URL%
 				Name=%NAME%
 				match=%match%
-				url=%DOWNLOAD_URL%%match%
-				url_downloader_summary_result=%url_downloader_summary_result%</string>
+				url=%DOWNLOAD_URL%%match%</string>
 				<key>file_path</key>
 				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
 			</dict>
