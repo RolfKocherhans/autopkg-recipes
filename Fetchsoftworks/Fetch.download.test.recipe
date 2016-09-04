@@ -45,6 +45,15 @@
 			<key>Processor</key>
 			<string>FileCreator</string>
 		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%%match%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
 	</array>
 </dict>
 </plist>
