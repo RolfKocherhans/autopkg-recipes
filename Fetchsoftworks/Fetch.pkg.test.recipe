@@ -54,8 +54,36 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pkg_request</key>
+				<dict>
+					<key>chown</key>
+					<array>
+						<dict>
+							<key>group</key>
+							<string>admin</string>
+							<key>path</key>
+							<string>Applications</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+					</array>
+					<key>id</key>
+					<string>%bundleid%</string>
+					<key>options</key>
+					<string>purge_ds_store</string>
+					<key>pkgname</key>
+					<string>%NAME%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>file_content</key>
 				<string>Variables:
+				bundleid=%bundleid%
 				pkgroot=%pkgroot%
 				version=%version%
 				pathname=%pathname%
