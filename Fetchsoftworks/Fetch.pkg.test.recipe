@@ -76,7 +76,7 @@
 					<key>pkgname</key>
 					<string>%NAME%</string>
 					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<string>%pkgroot%</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
