@@ -14,7 +14,7 @@
 	<key>MinimumVersion</key>
 	<string>0.5</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rolfkocherhans.download.CitrixReceiver.test</string>
+	<string>com.github.rolfkocherhans.download.test.CitrixReceiver</string>
 	<key>Process</key>
 	<array>
 		<dict>
