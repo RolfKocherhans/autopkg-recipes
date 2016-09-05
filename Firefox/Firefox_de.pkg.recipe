@@ -81,7 +81,7 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>Firefox.pkg.RK</string>
+					<string>org.mozilla.firefox</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
