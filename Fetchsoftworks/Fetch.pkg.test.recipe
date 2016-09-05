@@ -65,7 +65,7 @@
 				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%
 				url=%DOWNLOAD_URL%%match%</string>
 				<key>file_path</key>
-				<string>%RECIPE_CACHE_DIR%/ Pkg Variables.txt</string>
+				<string>%RECIPE_CACHE_DIR%/2. Pkg Variables.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
