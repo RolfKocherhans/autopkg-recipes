@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Citrix dmg from the Citrix website and creates a pkg installer.</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.CitrixReceiver</string>
+	<string>com.github.rolfkocherhans.pkg.test.CitrixReceiver</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
