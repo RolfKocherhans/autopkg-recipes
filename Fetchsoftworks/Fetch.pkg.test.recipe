@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Fetch.</string>
+	<string>Downloads the latest Fetch and creates an Apple PKG.</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.pkg.Fetch.test</string>
 	<key>Input</key>
@@ -12,13 +12,9 @@
 		<string>com.fetchsoftworks.Fetch</string>
 		<key>NAME</key>
 		<string>Fetch</string>
-		<key>REGISTRANTNAME</key>
-		<string></string>
-		<key>SERIALNUMBER</key>
-		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.3.0</string>
+	<string>0.5</string>
 	<key>ParentRecipe</key>
 	<string>com.github.rolfkocherhans.download.Fetch.test</string>
 	<key>Process</key>
@@ -77,6 +73,8 @@
 					</array>
 					<key>id</key>
 					<string>%BUNDLEID%</string>
+					<key>options</key>
+					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
@@ -93,7 +91,14 @@
 			<dict>
 				<key>file_content</key>
 				<string>Variables:
+				bundleid=%bundleid%
 				pkgroot=%pkgroot%
+				version=%version%
+				pathname=%pathname%
+				DOWNLOAD_URL=%DOWNLOAD_URL%
+				Name=%NAME%
+				match=%match%
+				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%
 				url=%DOWNLOAD_URL%%match%</string>
 				<key>file_path</key>
 				<string>%RECIPE_CACHE_DIR%/2. Pkg Variables.txt</string>
