@@ -3,16 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates a PKG from downloaded Fetch dmg</string>
+	<string>Downloads the latest Fetch.</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.pkg.Fetch.test</string>
 	<key>Input</key>
 	<dict>
+		<key>BUNDLEID</key>
+		<string>com.fetchsoftworks.Fetch</string>
 		<key>NAME</key>
 		<string>Fetch</string>
+		<key>REGISTRANTNAME</key>
+		<string></string>
+		<key>SERIALNUMBER</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5</string>
+	<string>0.3.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.rolfkocherhans.download.Fetch.test</string>
 	<key>Process</key>
@@ -20,11 +26,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>dmg_path</key>
-				<string>%pathname%</string>
+				<key>input_plist_path</key>
+				<string>%pathname%/Fetch.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
-			<string>AppDmgVersioner</string>
+			<string>Versioner</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -35,7 +43,7 @@
 					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<string>%RECIPE_CACHE_DIR%/build</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgRootCreator</string>
@@ -44,9 +52,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Fetch.app</string>
+				<string>%pkgroot%/Applications/%NAME%.app</string>
 				<key>source_path</key>
-				<string>%pathname%/Fetch.app</string>
+				<string>%pathname%/%NAME%.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -68,39 +76,19 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>Firefox.pkg.RK</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
+					<string>%BUNDLEID%</string>
 					<key>pkgname</key>
-					<string>%NAME%</string>
+					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<string>%pkgroot%</string>
+					<key>scripts</key>
+					<string>%RECIPE_CACHE_DIR%/Scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>file_content</key>
-				<string>Variables:
-				bundleid=%bundleid%
-				pkgroot=%pkgroot%
-				version=%version%
-				pathname=%pathname%
-				DOWNLOAD_URL=%DOWNLOAD_URL%
-				Name=%NAME%
-				match=%match%
-				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%
-				url=%DOWNLOAD_URL%%match%</string>
-				<key>file_path</key>
-				<string>%RECIPE_CACHE_DIR%/2. Pkg Variables.txt</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileCreator</string>
 		</dict>
 	</array>
 </dict>
