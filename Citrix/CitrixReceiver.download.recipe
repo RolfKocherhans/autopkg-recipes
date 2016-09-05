@@ -12,49 +12,30 @@
 		<string>CitrixReceiver</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.3.1</string>
+	<string>0.5</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https://www.citrix.com/downloads/citrix-receiver/mac/receiver-for-mac-latest.html</string>
 				<key>re_pattern</key>
 				<string>(?P&lt;DYNAMIC_URL&gt;//downloads.citrix.com/[\d]+/CitrixReceiver(?P&lt;version&gt;[\d\.]+).dmg\?__gda__\=[\w]+)</string>
+				<key>url</key>
+				<string>https://www.citrix.com/downloads/citrix-receiver/mac/receiver-for-mac-latest.html</string>
 			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
-				<key>url</key>
-				<string>https:%DYNAMIC_URL%</string>
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
+				<key>url</key>
+				<string>https:%DYNAMIC_URL%</string>
 			</dict>
-		</dict>
-		<dict>
 			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%pathname%/Install Citrix Receiver.pkg</string>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Installer: Citrix Systems, Inc.</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
-			</dict>
+			<string>URLDownloader</string>
 		</dict>
 	</array>
 </dict>
