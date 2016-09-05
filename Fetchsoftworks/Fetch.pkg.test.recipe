@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest CitrixReceiver version and extracts the package.</string>
+	<string>Creates a PKG from downloaded Fetch dmg</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.pkg.Fetch.test</string>
 	<key>Input</key>
