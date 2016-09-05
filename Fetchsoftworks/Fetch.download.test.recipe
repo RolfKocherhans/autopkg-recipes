@@ -41,14 +41,14 @@
 			<key>Arguments</key>
 			<dict>
 				<key>file_content</key>
-				<string>AutoPkg Variables:
+				<string>Download Variables:
 				DOWNLOAD_URL=%DOWNLOAD_URL%
 				Name=%NAME%
 				match=%match%
 				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%
 				url=%DOWNLOAD_URL%%match%</string>
 				<key>file_path</key>
-				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
+				<string>%RECIPE_CACHE_DIR%/ Download Variables.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
