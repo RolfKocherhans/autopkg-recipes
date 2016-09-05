@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Fetch and creates an Apple PKG.</string>
+	<string>Downloads the latest Fetch dmg from the Fetch Softworks website and creates a pkg installer.</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.Fetch.test</string>
+	<string>com.github.rolfkocherhans.pkg.Fetch</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLEID</key>
@@ -16,14 +16,14 @@
 	<key>MinimumVersion</key>
 	<string>0.5</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rolfkocherhans.download.Fetch.test</string>
+	<string>com.github.rolfkocherhans.download.Fetch</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Fetch.app/Contents/Info.plist</string>
+				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
