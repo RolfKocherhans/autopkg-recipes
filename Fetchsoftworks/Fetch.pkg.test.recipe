@@ -68,11 +68,15 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>com.bla.bla</string>
+					<string>Firefox.pkg.RK</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
-					<string>Hallo</string>
+					<string>%NAME%-%version%</string>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<key>version</key>
+					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
