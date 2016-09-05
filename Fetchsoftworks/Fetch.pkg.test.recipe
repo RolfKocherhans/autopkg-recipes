@@ -57,6 +57,7 @@
 				<key>file_content</key>
 				<string>Variables:
 				pkgroot=%pkgroot%
+				version=%version%
 				pathname=%pathname%
 				DOWNLOAD_URL=%DOWNLOAD_URL%
 				Name=%NAME%
