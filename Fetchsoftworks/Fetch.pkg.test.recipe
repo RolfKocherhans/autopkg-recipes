@@ -68,11 +68,11 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>%bundleid%</string>
+					<string>com.bla.bla</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
-					<string>%NAME%</string>
+					<string>Hallo</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
