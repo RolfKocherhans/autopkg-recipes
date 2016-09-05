@@ -41,14 +41,14 @@
 			<key>Arguments</key>
 			<dict>
 				<key>file_content</key>
-				<string>Download Variables:
+				<string>Variables:
 				DOWNLOAD_URL=%DOWNLOAD_URL%
 				Name=%NAME%
 				match=%match%
 				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%
 				url=%DOWNLOAD_URL%%match%</string>
 				<key>file_path</key>
-				<string>%RECIPE_CACHE_DIR%/ Download Variables.txt</string>
+				<string>%RECIPE_CACHE_DIR%/1. Download Variables.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
