@@ -81,8 +81,6 @@
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
-					<key>scripts</key>
-					<string>%RECIPE_CACHE_DIR%/Scripts</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
