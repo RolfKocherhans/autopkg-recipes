@@ -3,16 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Creates a PKG from downloaded Fetch dmg</string>
+	<string>Downloads the latest Fetch.</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.pkg.Fetch.test</string>
 	<key>Input</key>
 	<dict>
+		<key>BUNDLEID</key>
+		<string>com.fetchsoftworks.Fetch</string>
 		<key>NAME</key>
 		<string>Fetch</string>
+		<key>REGISTRANTNAME</key>
+		<string></string>
+		<key>SERIALNUMBER</key>
+		<string></string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5</string>
+	<string>0.3.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.rolfkocherhans.download.Fetch.test</string>
 	<key>Process</key>
@@ -46,9 +52,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Fetch.app</string>
+				<string>%pkgroot%/Applications/%NAME%.app</string>
 				<key>source_path</key>
-				<string>%pathname%/Fetch.app</string>
+				<string>%pathname%/%NAME%.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
@@ -70,11 +76,9 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>Firefox.pkg.RK</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
+					<string>%BUNDLEID%</string>
 					<key>pkgname</key>
-					<string>%NAME%</string>
+					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%pkgroot%</string>
 					<key>version</key>
