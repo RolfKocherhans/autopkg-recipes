@@ -65,8 +65,6 @@
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/payload</string>
-					<key>version</key>
-					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
@@ -81,11 +79,8 @@
 				pkgroot=%pkgroot%
 				version=%version%
 				pathname=%pathname%
-				DOWNLOAD_URL=%DOWNLOAD_URL%
 				Name=%NAME%
-				match=%match%
-				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%
-				url=%DOWNLOAD_URL%%match%</string>
+				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%</string>
 				<key>file_path</key>
 				<string>%RECIPE_CACHE_DIR%/2. Pkg Variables.txt</string>
 			</dict>
