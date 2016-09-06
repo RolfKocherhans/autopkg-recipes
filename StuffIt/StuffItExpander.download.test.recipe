@@ -39,12 +39,12 @@
 			<key>Arguments</key>
 			<dict>
 				<key>file_content</key>
-				<string>AutoPkg Variables:
+				<string>Variables:
 				SPARKLE_FEED_URL=%SPARKLE_FEED_URL%
 				Name=%NAME%
 				Version=%version%</string>
 				<key>file_path</key>
-				<string>%RECIPE_CACHE_DIR%/AutoPkg Variables.txt</string>
+				<string>%RECIPE_CACHE_DIR%/1. Download Variables.txt</string>
 			</dict>
 			<key>Processor</key>
 			<string>FileCreator</string>
