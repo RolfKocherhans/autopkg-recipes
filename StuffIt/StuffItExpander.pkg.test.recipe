@@ -8,6 +8,8 @@
 	<string>com.github.rolfkocherhans.pkg.StuffItExpander.test</string>
 	<key>Input</key>
 	<dict>
+		<key>BUNDLEID</key>
+		<string>com.stuffit.StuffIt-Expander.pkg</string>
 		<key>NAME</key>
 		<string>StuffItExpander</string>
 	</dict>
@@ -56,17 +58,39 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>com.stuffit.StuffIt-Expander.pkg</string>
+					<string>%BUNDLEID%</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
+					<key>pkgroot</key>
+					<string>%pkgroot%</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>Variables:
+				BUNDLEID=%BUNDLEID%
+				pkgroot=%pkgroot%
+				version=%version%
+				pathname=%pathname%
+				DOWNLOAD_URL=%DOWNLOAD_URL%
+				Name=%NAME%
+				match=%match%
+				RECIPE_CACHE_DIR=%RECIPE_CACHE_DIR%
+				url=%DOWNLOAD_URL%%match%</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/2. Pkg Variables.txt</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
 		</dict>
 	</array>
 </dict>
