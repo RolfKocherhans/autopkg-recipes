@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Description</key>
+	<string>Downloads the latest Firefox (German) dmg from the Mozilla website and creates a pkg installer.</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.pkg.Firefox_de</string>
 	<key>Input</key>
 	<dict>
+		<key>BUNDLEID</key>
+		<string>org.mozilla.firefox</string>
 		<key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
 		<false/>
 		<key>LOCALE</key>
@@ -15,6 +19,8 @@
 		<key>RELEASE</key>
 		<string>latest</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5</string>
 	<key>ParentRecipe</key>
 	<string>com.github.autopkg.download.firefox-rc-en_US</string>
 	<key>Process</key>
@@ -81,7 +87,7 @@
 						</dict>
 					</array>
 					<key>id</key>
-					<string>org.mozilla.firefox</string>
+					<string>%BUNDLEID%</string>
 					<key>options</key>
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
