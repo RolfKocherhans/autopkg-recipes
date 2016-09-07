@@ -20,9 +20,6 @@ import subprocess
 import os
 
 
-global version
-#version=""
-
 __all__ = ["TivoliStorageManagerURLProviderNew"]
 
 
@@ -83,6 +80,44 @@ class TivoliStorageManagerURLProviderNew(Processor):
         '''])
         url = url[:-1]
         self.env["url"] = url
+        version = subprocess.check_output(['osascript', '-e', r'''
+        -- ######### Start of the AppleScript part #########
+
+        -- # extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
+        set tFTPServer to "ftp://public.dhe.ibm.com"
+        set tFTPDirectory to "/storage/tivoli-storage-management/maintenance/client/"
+        set tShellCommand to "curl " & quoted form of (tFTPServer & tFTPDirectory)
+        set tFoundFolderNames to paragraphs of (do shell script tShellCommand)
+        set tMajorVersion to last word of last item of tFoundFolderNames
+        
+        -- # add above info to the FTP-URL and go two levels deeper to extract the minor "Tivoli Storage Manager" version e.g. v713,v714,v716 - v716
+        set tFTPDirectory to "/storage/tivoli-storage-management/maintenance/client/" & tMajorVersion & "/Mac/"
+        set tShellCommand to "curl " & quoted form of (tFTPServer & tFTPDirectory)
+        set tFoundFolderNames to paragraphs of (do shell script tShellCommand)
+        set tMinorVersion to last word of last item of tFoundFolderNames
+        
+        -- # add above info to the FTP-URL and go one level deeper and extract the file name e.g. 7.1.6.0-TIV-TSMBAC-Mac.dmg
+        set tFTPDirectory to "/storage/tivoli-storage-management/maintenance/client/" & tMajorVersion & "/Mac/" & tMinorVersion & "/"
+        set tShellCommand to "curl " & quoted form of (tFTPServer & tFTPDirectory)
+        set tFoundFolderNames to paragraphs of (do shell script tShellCommand)
+        
+        -- # extract line containing the download file name -> "-rw-r--r--    1 102004493 209       156000727 Jun 17 10:41 7.1.6.0-TIV-TSMBAC-Mac.dmg"
+        set AppleScript's text item delimiters to {space}
+        set tDelimitedList to every text item of tFoundFolderNames
+        set tFileNameOnWholeLine to text item 3 of tDelimitedList
+        
+        -- # extract the file name from the above line -> 7.1.6.0-TIV-TSMBAC-Mac.dmg
+        set AppleScript's text item delimiters to {space}
+        set tDelimitedList to every text item of tFileNameOnWholeLine
+        set tFileName to last text item of tDelimitedList
+        
+        -- # extract the version from the above line -> 7.1.6.0
+        set AppleScript's text item delimiters to {"-"}
+        set tDelimitedList to every text item of tFileName
+        set tFileName to first text item of tDelimitedList
+        
+        -- #########  End of the AppleScript part #########
+        '''])
         self.env["version"] = version
 
 if __name__ == '__main__':
