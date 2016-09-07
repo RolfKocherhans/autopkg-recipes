@@ -115,6 +115,7 @@ class TivoliStorageManagerURLProviderNew(Processor):
         set AppleScript's text item delimiters to {"-"}
         set tDelimitedList to every text item of tFileName
         set tFileName to first text item of tDelimitedList
+        set tFileName 1 thru -2 of tFileName
         
         -- #########  End of the AppleScript part #########
         '''])
