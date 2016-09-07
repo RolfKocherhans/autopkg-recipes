@@ -32,7 +32,7 @@ class TivoliStorageManagerURLProviderNew(Processor):
     }
     output_variables = {
         "version": {
-        "description": "Version of the product.",
+            "description": "Version of the product.",
         },
         "url": {
             "description": "Download URL.",
