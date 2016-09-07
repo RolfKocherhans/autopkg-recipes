@@ -83,6 +83,7 @@ class TivoliStorageManagerURLProviderNew(Processor):
         '''])
         url = url[:-1]
         self.env["url"] = url
+        self.env["version"] = version
 
 if __name__ == '__main__':
     processor = TivoliStorageManagerURLProviderNew()
