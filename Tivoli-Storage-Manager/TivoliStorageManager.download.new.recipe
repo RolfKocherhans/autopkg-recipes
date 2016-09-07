@@ -20,7 +20,7 @@
 				<string>TivoliStorageManager</string>
 			</dict>
 			<key>Processor</key>
-			<string>TivoliStorageManagerURLProvider</string>
+			<string>TivoliStorageManagerURLProviderNew</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
