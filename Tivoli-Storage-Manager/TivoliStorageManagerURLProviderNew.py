@@ -21,7 +21,7 @@ import os
 
 
 global version
-#version="321"
+version=""
 
 __all__ = ["TivoliStorageManagerURLProviderNew"]
 
