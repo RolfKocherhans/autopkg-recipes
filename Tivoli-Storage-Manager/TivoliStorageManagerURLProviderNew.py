@@ -20,10 +20,10 @@ import subprocess
 import os
 
 
-__all__ = ["TivoliStorageManagerURLProvider"]
+__all__ = ["TivoliStorageManagerURLProviderNew"]
 
 
-class TivoliStorageManagerURLProvider(Processor):
+class TivoliStorageManagerURLProviderNew(Processor):
     description = "Returns url to the latest Tivoli Storage Manager package."
     input_variables = {
     }
@@ -76,5 +76,5 @@ class TivoliStorageManagerURLProvider(Processor):
         self.env["url"] = url
 
 if __name__ == '__main__':
-    processor = TivoliStorageManagerURLProvider()
+    processor = TivoliStorageManagerURLProviderNew()
     processor.execute_shell()
