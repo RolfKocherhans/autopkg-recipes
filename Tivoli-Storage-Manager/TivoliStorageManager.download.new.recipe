@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Tivoli Storage Manager (dmg) from IBM.</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.download.new.TivoliStorageManager</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
