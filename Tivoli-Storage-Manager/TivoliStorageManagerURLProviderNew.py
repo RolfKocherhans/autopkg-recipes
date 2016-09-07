@@ -25,7 +25,7 @@ global version
 __all__ = ["TivoliStorageManagerURLProviderNew"]
 
 
-class TivoliStorageManagerURLProvider(Processor):
+class TivoliStorageManagerURLProviderNew(Processor):
     description = "Returns url to the latest Tivoli Storage Manager package."
     input_variables = {
     }
