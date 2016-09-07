@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Firefox (German) dmg from the Mozilla.</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.pkg.new.TivoliStorageManager</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
