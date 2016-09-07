@@ -20,8 +20,6 @@ import subprocess
 import os
 
 
-global version
-
 __all__ = ["TivoliStorageManagerURLProvider"]
 
 
@@ -30,11 +28,8 @@ class TivoliStorageManagerURLProvider(Processor):
     input_variables = {
     }
     output_variables = {
-        "version": {
-        "description": "Version of the product.",
-        },
         "url": {
-            "description": "Download URL.",
+            "description": "download URL.",
         }
     }
     
@@ -44,9 +39,6 @@ class TivoliStorageManagerURLProvider(Processor):
     def main(self):
         url = subprocess.check_output(['osascript', '-e', r'''
         -- ######### Start of the AppleScript part #########
-        
-        do shell script "python -c \"global version;version=\"123\";print(version)\""
-        
         -- # extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
         set tFTPServer to "ftp://public.dhe.ibm.com"
         set tFTPDirectory to "/storage/tivoli-storage-management/maintenance/client/"
