@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Tivoli Storage Manager (dmg) from IBM.</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.new.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.download.TivoliStorageManager</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -20,13 +20,13 @@
 				<string>TivoliStorageManager</string>
 			</dict>
 			<key>Processor</key>
-			<string>TivoliStorageManagerURLProviderNew</string>
+			<string>TivoliStorageManagerURLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%%version%.dmg</string>
+				<string>%NAME%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
