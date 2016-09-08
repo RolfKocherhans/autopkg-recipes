@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Firefox (German) dmg from the Mozilla.</string>
+	<string>Downloads the latest Tivoli Storage Manager (dmg) from IBM.</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.pkg.TivoliStorageManager</string>
 	<key>Input</key>
