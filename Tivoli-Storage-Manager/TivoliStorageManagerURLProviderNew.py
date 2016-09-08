@@ -113,14 +113,15 @@ class TivoliStorageManagerURLProviderNew(Processor):
         set tDelimitedList to every text item of tFileName
         set tFileName to first text item of tDelimitedList
         
-        set AppleScript's text item delimiters to {return, linefeed}
-        set tFileName to first text item of tFileName & "a"
+        --set AppleScript's text item delimiters to {return, linefeed}
+        --set tFileName to first text item of tFileName & "a"
         -- # return text 1 thru -2 of tFileName
         -- # delete last character of tFileName
         -- # set StringVariable2 to (characters 1 through ((length of tFileName) - 1) of tFileName) as string
         
         -- #########  End of the AppleScript part #########
         '''])
+        version = version[:-1]
         self.env["version"] = version
 
 if __name__ == '__main__':
