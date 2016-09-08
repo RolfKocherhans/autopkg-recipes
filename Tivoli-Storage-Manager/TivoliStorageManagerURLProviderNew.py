@@ -72,7 +72,6 @@ class TivoliStorageManagerURLProviderNew(Processor):
         
         -- # create download link
         set tURL to tFTPServer & "/storage/tivoli-storage-management/maintenance/client/" & tMajorVersion & "/Mac/" & tMinorVersion & "/" & tFileName
-        
         -- #########  End of the AppleScript part #########
         '''])
         url = url[:-1]
