@@ -28,8 +28,11 @@ class TivoliStorageManagerURLProvider(Processor):
     input_variables = {
     }
     output_variables = {
+        "version": {
+            "description": "Version of the product.",
+        },
         "url": {
-            "description": "download URL.",
+            "description": "Download URL.",
         }
     }
     
@@ -69,11 +72,13 @@ class TivoliStorageManagerURLProvider(Processor):
         
         -- # create download link
         set tURL to tFTPServer & "/storage/tivoli-storage-management/maintenance/client/" & tMajorVersion & "/Mac/" & tMinorVersion & "/" & tFileName
-        
         -- #########  End of the AppleScript part #########
         '''])
         url = url[:-1]
         self.env["url"] = url
+        
+        version=url.rsplit("/")[-1].rsplit("-")[0]
+        self.env["version"] = version
 
 if __name__ == '__main__':
     processor = TivoliStorageManagerURLProvider()
