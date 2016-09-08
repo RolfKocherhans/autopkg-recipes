@@ -42,9 +42,6 @@ class TivoliStorageManagerURLProviderNew(Processor):
     def main(self):
         url = subprocess.check_output(['osascript', '-e', r'''
         -- ######### Start of the AppleScript part #########
-        
-        do shell script "python -c \"global version;version=123\""
-        
         -- # extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
         set tFTPServer to "ftp://public.dhe.ibm.com"
         set tFTPDirectory to "/storage/tivoli-storage-management/maintenance/client/"
@@ -116,8 +113,8 @@ class TivoliStorageManagerURLProviderNew(Processor):
         set tDelimitedList to every text item of tFileName
         set tFileName to first text item of tDelimitedList
         -- # return text 1 thru -2 of tFileName
-        -- # delete last character of tFileName
-        set StringVariable2 to (characters 1 through ((length of tFileName) - 1) of tFileName) as string
+        delete last character of tFileName
+        -- # set StringVariable2 to (characters 1 through ((length of tFileName) - 1) of tFileName) as string
         
         -- #########  End of the AppleScript part #########
         '''])
