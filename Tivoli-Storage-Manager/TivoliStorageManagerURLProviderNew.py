@@ -113,7 +113,7 @@ class TivoliStorageManagerURLProviderNew(Processor):
         set tDelimitedList to every text item of tFileName
         set tFileName to first text item of tDelimitedList
         
-        set AppleScript's text item delimiters to {return & linefeed, return, linefeed, character id 8233, character id 8232}
+        set AppleScript's text item delimiters to {return, linefeed}
         set tFileName to first text item of tFileName
         -- # return text 1 thru -2 of tFileName
         -- # delete last character of tFileName
