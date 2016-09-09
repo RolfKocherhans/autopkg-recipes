@@ -19,7 +19,7 @@ If you would like to use an undocumented HTTPS download, set DOWNLOAD_URL_SCHEME
         <key>VERSION</key>
         <string>latest</string>
         <key>CULTURE_CODE</key>
-        <string>0409</string>
+        <string>0807</string>
         <key>DOWNLOAD_URL_SCHEME</key>
         <string>http</string>
     </dict>
