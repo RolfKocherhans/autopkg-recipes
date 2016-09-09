@@ -26,6 +26,6 @@ If you would like to use an undocumented HTTPS download, set DOWNLOAD_URL_SCHEME
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.download.firefox-rc-en_US</string>
+	<string>com.github.autopkg.download.Office2011Updates</string>
 </dict>
 </plist>
