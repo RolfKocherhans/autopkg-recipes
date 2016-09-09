@@ -15,7 +15,7 @@ If you would like to use an undocumented HTTPS download, set DOWNLOAD_URL_SCHEME
 	<key>Input</key>
 	<dict>
 		<key>CULTURE_CODE</key>
-		<string>0807</string>
+		<string>0407</string>
 		<key>DOWNLOAD_URL_SCHEME</key>
 		<string>http</string>
 		<key>NAME</key>
