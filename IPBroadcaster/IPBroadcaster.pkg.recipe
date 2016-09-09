@@ -8,6 +8,8 @@
 	<string>com.github.rolfkocherhans.pkg.IPBroadcaster</string>
 	<key>Input</key>
 	<dict>
+		<key>BUNDLEID</key>
+		<string>com.10baseT.IPBroadcaster.pkg</string>
 		<key>NAME</key>
 		<string>IPBroadcaster</string>
 	</dict>
