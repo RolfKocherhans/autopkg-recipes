@@ -20,48 +20,55 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack</string>
-				<key>flat_pkg_path</key>
-				<string>%pathname%/*.pkg</string>
+				<string>%RECIPE_CACHE_DIR%/payload/Applications</string>
+				<key>purge_destination</key>
+				<true/>
 			</dict>
 			<key>Processor</key>
-			<string>FlatPkgUnpacker</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/payload</string>
-				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/com.citrix.ICAClient.pkg/Payload</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgPayloadUnpacker</string>
+			<string>Unarchiver</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/payload/Applications/Citrix Receiver.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/payload/Applications/IP Broadcaster.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
-			<key>Comment</key>
-			<string>Get version from the pkg</string>
 			<key>Processor</key>
 			<string>Versioner</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				<key>source_pkg</key>
-				<string>%pathname%/*.pkg</string>
+				<key>pkg_request</key>
+				<dict>
+					<key>chown</key>
+					<array>
+						<dict>
+							<key>group</key>
+							<string>admin</string>
+							<key>path</key>
+							<string>Applications</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+					</array>
+					<key>id</key>
+					<string>%BUNDLEID%</string>
+					<key>options</key>
+					<string>purge_ds_store</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/payload</string>
+				</dict>
 			</dict>
 			<key>Processor</key>
-			<string>PkgCopier</string>
+			<string>PkgCreator</string>
 		</dict>
 	</array>
 </dict>
