@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest EasyFind (ZIP).</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.download.EasyFind</string>
+	<key>Input</key>
+	<dict>
+		<key>DOWNLOAD_URL</key>
+		<string>http://www.devontechnologies.com/download/products.html</string>
+		<key>NAME</key>
+		<string>EasyFind</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>[^"]+EasyFind\.app\.zip</string>
+				<key>url</key>
+				<string>%DOWNLOAD_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.zip</string>
+				<key>url</key>
+				<string>%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+	</array>
+</dict>
+</plist>
