@@ -29,6 +29,8 @@
 				<true/>
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
+				<key>url</key>
+				<string>%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
