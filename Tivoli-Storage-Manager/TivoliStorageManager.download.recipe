@@ -8,13 +8,9 @@
 	<string>com.github.rolfkocherhans.download.TivoliStorageManager</string>
 	<key>Input</key>
 	<dict>
-		<key>CHECK_FILESIZE_ONLY</key>
-		<false/>
 		<key>NAME</key>
 		<string>TivoliStorageManager</string>
 	</dict>
-	<key>MinimumVersion</key>
-	<string>0.5</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -29,6 +25,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>CHECK_FILESIZE_ONLY</key>
+				<true/>
 				<key>filename</key>
 				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
