@@ -43,6 +43,7 @@ class TivoliStorageManagerURLProvider(Processor):
         url = subprocess.check_output(['osascript', '-e', r'''
         -- ######### Start of the AppleScript part #########
         -- # extract the name of the latest major "Tivoli Storage Manager" version e.g. v6r3,v6r4,v7r1 -> v7r1
+        set tHTTPServer to "http://public.dhe.ibm.com"
         set tFTPServer to "ftp://public.dhe.ibm.com"
         set tFTPDirectory to "/storage/tivoli-storage-management/maintenance/client/"
         set tShellCommand to "curl " & quoted form of (tFTPServer & tFTPDirectory)
@@ -71,7 +72,7 @@ class TivoliStorageManagerURLProvider(Processor):
         set tFileName to last text item of tDelimitedList
         
         -- # create download link
-        set tURL to tFTPServer & "/storage/tivoli-storage-management/maintenance/client/" & tMajorVersion & "/Mac/" & tMinorVersion & "/" & tFileName
+        set tURL to tHTTPServer & "/storage/tivoli-storage-management/maintenance/client/" & tMajorVersion & "/Mac/" & tMinorVersion & "/" & tFileName
         -- #########  End of the AppleScript part #########
         '''])
         url = url[:-1]
