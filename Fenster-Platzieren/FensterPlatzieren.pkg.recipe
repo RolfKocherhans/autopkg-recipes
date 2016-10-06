@@ -13,7 +13,7 @@
 		<key>NAME</key>
 		<string>Fenster Platzieren</string>
 		<key>PATH</key>
-		<string>/Applications/%NAME%.app</string>
+		<string>/Applications/Utilities/%NAME%.app</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5</string>
