@@ -52,9 +52,9 @@
 					<array>
 						<dict>
 							<key>group</key>
-							<string>admin</string>
+							<string>wheel</string>
 							<key>path</key>
-							<string>Applications/Utilities</string>
+							<string>Applications</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
