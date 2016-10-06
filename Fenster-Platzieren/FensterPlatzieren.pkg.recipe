@@ -22,6 +22,20 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pkgdirs</key>
+				<dict>
+					<key>Applications</key>
+					<string>0775</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/payload/%PATH%</string>
 				<key>overwrite</key>
@@ -54,7 +68,7 @@
 							<key>group</key>
 							<string>admin</string>
 							<key>path</key>
-							<string>Applications</string>
+							<string>Applications/Utilities</string>
 							<key>user</key>
 							<string>root</string>
 						</dict>
