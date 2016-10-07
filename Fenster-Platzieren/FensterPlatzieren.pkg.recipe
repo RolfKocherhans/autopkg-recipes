@@ -26,6 +26,8 @@
 				<dict>
 					<key>Applications</key>
 					<string>0775</string>
+					<key>Applications/Utilities</key>
+					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>
 				<string>%RECIPE_CACHE_DIR%/payload</string>
