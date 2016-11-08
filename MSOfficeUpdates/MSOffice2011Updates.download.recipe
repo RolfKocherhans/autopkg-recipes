@@ -16,6 +16,8 @@ If you would like to use an undocumented HTTPS download, set DOWNLOAD_URL_SCHEME
 	<dict>
 		<key>CULTURE_CODE</key>
 		<string>0407</string>
+		<key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
+		<true/>
 		<key>DOWNLOAD_URL_SCHEME</key>
 		<string>http</string>
 		<key>NAME</key>
@@ -25,44 +27,7 @@ If you would like to use an undocumented HTTPS download, set DOWNLOAD_URL_SCHEME
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.6.0</string>
-	<key>Process</key>
-	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>culture_code</key>
-				<string>%CULTURE_CODE%</string>
-				<key>munki_update_name</key>
-				<string>%NAME%</string>
-				<key>version</key>
-				<string>%VERSION%</string>
-			</dict>
-			<key>Processor</key>
-			<string>MSOffice2011UpdateInfoProvider</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>expected_authority_names</key>
-				<array>
-					<string>Developer ID Installer: Microsoft Corporation</string>
-					<string>Developer ID Certification Authority</string>
-					<string>Apple Root CA</string>
-				</array>
-				<key>input_path</key>
-				<string>%pathname%/Office*.*pkg</string>
-			</dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-	</array>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.download.Office2011Updates</string>
 </dict>
 </plist>
