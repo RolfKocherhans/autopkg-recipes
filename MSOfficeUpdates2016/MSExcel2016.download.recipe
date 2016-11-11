@@ -27,7 +27,7 @@ the latest full update for the given CHANNEL.
 		<key>CHANNEL</key>
 		<string>Production</string>
 		<key>LOCALE_ID</key>
-		<string>2055</string>
+		<string>1031</string>
 		<key>NAME</key>
 		<string>MSExcel2016</string>
 		<key>VERSION</key>
