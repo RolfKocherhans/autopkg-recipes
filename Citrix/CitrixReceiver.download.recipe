@@ -3,19 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Citrix Receiver disk image.</string>
+	<string>Downloads the current release version of Citrix Receiver (dmg/pkg)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.CitrixReceiver</string>
+	<string>com.github.rolfkocherhans.download.citrixreceiver</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>CitrixReceiver</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5</string>
+	<string>1.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
+			<string>Regex puts the found string into the variable %DYNAMIC_URL%</string>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
@@ -27,6 +29,8 @@
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>UrlDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
