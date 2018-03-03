@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Package the current release version of EasyFind (zip/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.downloadANDpkg.EasyFind</string>
+	<string>com.github.rolfkocherhans.pkg.EasyFind</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
