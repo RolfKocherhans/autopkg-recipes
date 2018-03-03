@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of Cyberduck (zip/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.Cyberduck</string>
+	<string>com.github.rolfkocherhans.download.cyberduck</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -16,6 +16,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
+			<string>URLTextSearcher starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
@@ -27,6 +29,8 @@
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>URLDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
