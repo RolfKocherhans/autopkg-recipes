@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of GoogleChrome (dmg/app)</string>
+	<string>Package the current release version of GoogleChrome (dmg/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.GoogleChrome</string>
+	<string>com.github.rolfkocherhans.pkg.googlechrome</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
@@ -18,6 +18,8 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>URLDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
@@ -29,12 +31,10 @@
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
+			<key> •••••••   AppPkgCreator Comment   ••••••• </key>
+			<string>AppPkgCreator starts here</string>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
 </dict>
