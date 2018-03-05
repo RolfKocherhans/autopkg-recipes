@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Fetch dmg from the Fetch Softworks website.</string>
+	<string>Download the current release version of Fetch (dmd/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.Fetch</string>
+	<string>com.github.rolfkocherhans.pkg.fetch</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>
@@ -14,14 +14,16 @@
 		<string>Fetch</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
+			<string>UrlTextSearcher starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>/Fetch_.*\.dmg</string>
+				<string>(/Fetch_.*\.dmg)</string>
 				<key>url</key>
 				<string>http://fetchsoftworks.com</string>
 			</dict>
@@ -29,6 +31,8 @@
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>UrlDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
