@@ -3,15 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Download the current release version of Fetch (dmd/app)</string>
+	<string>Downloads the current release version of Fetch (dmg/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.fetch</string>
+	<string>com.github.rolfkocherhans.download.fetch</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>http://getfetch8.com</string>
+		<key>Modified-Recipe-From</key>
+		<string>com.github.jleggat.download.Fetch</string>
 		<key>NAME</key>
 		<string>Fetch</string>
+		<key>SEARCH_URL</key>
+		<string>https://fetchsoftworks.com</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0</string>
@@ -23,9 +25,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(/Fetch_.*\.dmg)</string>
+				<string>(?P&lt;url&gt;fetch/download/Fetch_(?P&lt;version&gt;[0-9.]+)\.dmg)</string>
 				<key>url</key>
-				<string>http://fetchsoftworks.com</string>
+				<string>%SEARCH_URL%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -35,8 +37,10 @@
 			<string>UrlDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.dmg</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%%match%</string>
+				<string>%SEARCH_URL%/%url%?direct=1</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
