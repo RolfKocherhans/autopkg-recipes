@@ -3,33 +3,33 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of DeployStudio.</string>
+	<string>Download the current release version of DeployStudio (dmg/pkg)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.DeployStudio</string>
+	<string>com.github.rolfkocherhans.download.deploystudio</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>DeployStudio</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5.0</string>
+	<string>1.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   DeployStudioURLProvider Comment   ••••••• </key>
+			<string>DeployStudioURLProvider starts here</string>
 			<key>Arguments</key>
 			<dict/>
 			<key>Processor</key>
 			<string>DeployStudioURLProvider</string>
 		</dict>
 		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>UrlDownloader starts here</string>
 			<key>Arguments</key>
 			<dict/>
 			<key>Processor</key>
 			<string>URLDownloader</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>EndOfCheckPhase</string>
 		</dict>
 	</array>
 </dict>
