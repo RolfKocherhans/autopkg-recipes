@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest EasyFind (ZIP).</string>
+	<string>Download latest EasyFind (ZIP).</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download.EasyFind</string>
 	<key>Input</key>
