@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of CitrixReceiver (dmg/pkg)</string>
+	<string>Download the current release version of CitrixReceiver (dmg/pkg)</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download.citrixreceiver</string>
 	<key>Input</key>
