@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Cyberduck (zip/app)</string>
+	<string>Download the current release version of Cyberduck (zip/app)</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download.cyberduck</string>
 	<key>Input</key>
