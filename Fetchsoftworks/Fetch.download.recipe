@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of Fetch (dmg/app)</string>
+	<string>Download the current release version of Fetch (dmg/app)</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download.fetch</string>
 	<key>Input</key>
