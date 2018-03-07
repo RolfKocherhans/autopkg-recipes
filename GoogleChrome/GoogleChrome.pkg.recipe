@@ -8,28 +8,15 @@
 	<string>com.github.rolfkocherhans.pkg.googlechrome</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg</string>
 		<key>NAME</key>
 		<string>GoogleChrome</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.rolfkocherhans.download.googlechrome</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key> •••••••   URLDownloader Comment   ••••••• </key>
-			<string>URLDownloader starts here</string>
-			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
-		</dict>
 		<dict>
 			<key> •••••••   AppPkgCreator Comment   ••••••• </key>
 			<string>AppPkgCreator starts here</string>
