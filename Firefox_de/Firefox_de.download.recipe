@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Firefox (German) dmg from the Mozilla.</string>
+	<string>Download the current release version of Firefox German (dmg/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.Firefox_de</string>
+	<string>com.github.rolfkocherhans.download.firefox_de</string>
 	<key>Input</key>
 	<dict>
 		<key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
@@ -18,7 +18,7 @@
 		<string>latest</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5</string>
+	<string>1.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.autopkg.download.firefox-rc-en_US</string>
 </dict>
