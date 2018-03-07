@@ -3,103 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Firefox (German) dmg from the Mozilla website and creates a pkg installer.</string>
+	<string>Package the current release version of Firefox German (dmg/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.Firefox_de</string>
+	<string>com.github.rolfkocherhans.pkg.firefox_de</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLEID</key>
-		<string>org.mozilla.firefox</string>
-		<key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
-		<false/>
-		<key>LOCALE</key>
-		<string>de</string>
 		<key>NAME</key>
 		<string>Firefox</string>
-		<key>RELEASE</key>
-		<string>latest</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5</string>
+	<string>1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.download.firefox-rc-en_US</string>
+	<string>com.github.rolfkocherhans.download.firefox_de</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_path</key>
-				<string>%pathname%/%NAME%.app</string>
-			</dict>
+			<key> •••••••   AppPkgCreator Comment   ••••••• </key>
+			<string>AppPkgCreator starts here</string>
 			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/payload</string>
-			</dict>
-			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
-				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>%BUNDLEID%</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-					<key>pkgroot</key>
-					<string>%RECIPE_CACHE_DIR%/payload</string>
-					<key>version</key>
-					<string>%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
