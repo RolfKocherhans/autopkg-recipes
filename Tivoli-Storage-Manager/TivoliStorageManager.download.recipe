@@ -3,17 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Tivoli Storage Manager (dmg) from IBM.</string>
+	<string>Download the current release version of TivoliStorageManager (dmg/pkg)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.download.tivolistoragemanager</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>TivoliStorageManager</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   TivoliStorageManagerURLProvider Comment   ••••••• </key>
+			<string>TivoliStorageManagerURLProvider starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>product_name</key>
@@ -23,6 +27,8 @@
 			<string>TivoliStorageManagerURLProvider</string>
 		</dict>
 		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>UrlDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
