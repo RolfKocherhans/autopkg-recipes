@@ -3,19 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest Tivoli Storage Manager (dmg) from IBM.</string>
+	<string>Package the current release version of TivoliStorageManager (dmg/pkg)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.pkg.tivolistoragemanager</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>TivoliStorageManager</string>
 	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rolfkocherhans.download.TivoliStorageManager</string>
+	<string>com.github.rolfkocherhans.download.tivolistoragemanager</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   FlatPkgUnpacker Comment   ••••••• </key>
+			<string>FlatPkgUnpacker starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
@@ -27,6 +31,8 @@
 			<string>FlatPkgUnpacker</string>
 		</dict>
 		<dict>
+			<key> •••••••   PkgPayloadUnpacker Comment   ••••••• </key>
+			<string>PkgPayloadUnpacker starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
@@ -38,19 +44,21 @@
 			<string>PkgPayloadUnpacker</string>
 		</dict>
 		<dict>
+			<key> •••••••   Versioner Comment   ••••••• </key>
+			<string>Versioner starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/payload/Applications/Tivoli Storage Manager/Tivoli Storage Manager.app/Contents/Info.plist</string>
+				<string>%RECIPE_CACHE_DIR%/payload/Applications/IBM Spectrum Protect/IBM Spectrum Protect.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleShortVersionString</string>
 			</dict>
-			<key>Comment</key>
-			<string>Get version from the pkg</string>
 			<key>Processor</key>
 			<string>Versioner</string>
 		</dict>
 		<dict>
+			<key> •••••••   PkgCopier Comment   ••••••• </key>
+			<string>PkgCopier starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
