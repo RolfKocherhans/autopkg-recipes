@@ -8,6 +8,8 @@
 	<string>com.github.rolfkocherhans.download.firefoxgerman</string>
 	<key>Input</key>
 	<dict>
+		<key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
+		<false/>
 		<key>LOCALE</key>
 		<string>de</string>
 		<key>NAME</key>
