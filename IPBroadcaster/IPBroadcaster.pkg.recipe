@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest IP Broadcaster (ZIP) and creates a pkg installer.</string>
+	<string>Package the current release version of IPBroadcaster (zip/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.IPBroadcaster</string>
+	<string>com.github.rolfkocherhans.pkg.ipbroadcaster</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLEID</key>
@@ -14,12 +14,14 @@
 		<string>IPBroadcaster</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.5</string>
+	<string>1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rolfkocherhans.download.IPBroadcaster</string>
+	<string>com.github.rolfkocherhans.download.ipbroadcaster</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   Unarchiver Comment   ••••••• </key>
+			<string>Unarchiver starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>archive_path</key>
@@ -33,6 +35,8 @@
 			<string>Unarchiver</string>
 		</dict>
 		<dict>
+			<key> •••••••   Versioner Comment   ••••••• </key>
+			<string>Versioner starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
@@ -44,6 +48,8 @@
 			<string>Versioner</string>
 		</dict>
 		<dict>
+			<key> •••••••   PkgCreator Comment   ••••••• </key>
+			<string>PkgCreator starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_request</key>
