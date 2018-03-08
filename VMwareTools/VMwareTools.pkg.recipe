@@ -3,21 +3,64 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release version of VMware Tools and extracts the installer package.</string>
+	<string>Package the current release version of VMwareTools (tar/zip)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.VMwareTools</string>
+	<string>com.github.rolfkocherhans.pkg.vmwaretools</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>VMwareTools</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rolfkocherhans.download.VMwareTools</string>
+	<string>com.github.rolfkocherhans.download.vmwaretools</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   Unarchiver Comment   ••••••• </key>
+			<string>Untars downloaded zip into folder VMwareTools-untar</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-untar</string>
+			</dict>
+			<key>New item</key>
+			<string></string>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key> •••••••   Unarchiver Comment   ••••••• </key>
+			<string>Unzips darwin.iso into folder VMwareTools/payload</string>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-untar/com.vmware.fusion.tools.darwin.zip</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>New item</key>
+			<string></string>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key> •••••••   FileMover Comment   ••••••• </key>
+			<string>Move VMwareTools.iso image to root folder</string>
+			<key>Arguments</key>
+			<dict>
+				<key>source</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/payload/darwin.iso</string>
+				<key>target</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.iso</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileMover</string>
+		</dict>
+		<dict>
+			<key> •••••••   Versioner Comment   ••••••• </key>
+			<string>Get version info of the installer app from inside the iso image</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
@@ -29,6 +72,8 @@
 			<string>Versioner</string>
 		</dict>
 		<dict>
+			<key> •••••••   Copier Comment   ••••••• </key>
+			<string>Copy the Contents of "VMware Tools installieren.app" into root/VMware-app folder</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
@@ -40,6 +85,8 @@
 			<string>Copier</string>
 		</dict>
 		<dict>
+			<key> •••••••   PkgCopier Comment   ••••••• </key>
+			<string>Copy the existing pkg out of Contents, into the root folder, and rename it</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
@@ -51,6 +98,8 @@
 			<string>PkgCopier</string>
 		</dict>
 		<dict>
+			<key> •••••••   PathDeleter Comment   ••••••• </key>
+			<string>Delete unnecessary folders and files</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
