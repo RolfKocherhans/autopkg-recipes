@@ -3,23 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads VMware Darwin ISO. Adapted from Jesse Peterson's and rtrouton VMwareTools.munki recipe</string>
+	<string>Download the current release version of VMwareTools (tar/zip)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.download.VMwareTools</string>
+	<string>com.github.rolfkocherhans.download.vmwaretools</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>VMwareTools</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.0</string>
+	<string>1.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
+			<key> •••••••   VMwareGuestToolsURLProvider Comment   ••••••• </key>
+			<string>VMwareGuestToolsURLProvider starts here</string>
 			<key>Processor</key>
 			<string>VMwareGuestToolsURLProvider</string>
 		</dict>
 		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>UrlDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
@@ -29,43 +33,10 @@
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
+			<key> •••••••   EndOfCheckPhase Comment   ••••••• </key>
+			<string>EndOfCheckPhase starts here</string>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-untar</string>
-			</dict>
-			<key>New item</key>
-			<string></string>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-untar/com.vmware.fusion.tools.darwin.zip</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>New item</key>
-			<string></string>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>source</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%/payload/darwin.iso</string>
-				<key>target</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.iso</string>
-			</dict>
-			<key>Processor</key>
-			<string>FileMover</string>
 		</dict>
 	</array>
 </dict>
