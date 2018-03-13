@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Download the current release version of HyPhy (dmg/app)</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.download.hyphy</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>HyPhy</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
+			<string>UrlTextSearcher starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(https://github.com/veg/hyphy/releases/download/[\d.]+/hyphy.dmg)</string>
+				<key>url</key>
+				<string>http://hyphy.org/w/index.php/Download</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>URLDownloader starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key> •••••••   EndOfCheckPhase Comment   ••••••• </key>
+			<string>EndOfCheckPhase starts here</string>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
