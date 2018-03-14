@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Package the current release version of LibreOffice (xxx/xxx)</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.pkg.libreoffice</string>
+	<key>Input</key>
+	<dict>
+		<key>BUNDLEID</key>
+		<string>org.libreoffice.script</string>
+		<key>NAME</key>
+		<string>LibreOffice</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.rolfkocherhans.download.libreoffice</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key> •••••••   AppPkgCreator Comment   ••••••• </key>
+			<string>AppPkgCreator starts here</string>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
