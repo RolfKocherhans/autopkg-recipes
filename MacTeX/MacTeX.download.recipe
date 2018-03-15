@@ -17,7 +17,20 @@
 	<array>
 		<dict>
 			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
-			<string>UrlTextSearcher starts here</string>
+			<string>put version info into variable</string>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(mactex-(?P&lt;version&gt;[1-9][\.\d]*).pkg.torrent)</string>
+				<key>url</key>
+				<string>http://www.tug.org/mactex/mactex-download.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
+			<string>get download link</string>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
@@ -33,6 +46,8 @@
 			<string>URLDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.pkg</string>
 				<key>url</key>
 				<string>%match%</string>
 			</dict>
