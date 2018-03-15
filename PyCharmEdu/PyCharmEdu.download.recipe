@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Download the current release version of PyCharm Edu (dmg/app)</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.download.pycharmedu</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>PyCharm Edu</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key> •••••••   JetbrainsURLProvider   ••••••• </key>
+			<string>JetbrainsURLProvider starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>product_code</key>
+				<string>PCE</string>
+			</dict>
+			<key>Processor</key>
+			<string>JetbrainsURLProvider</string>
+		</dict>
+		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>URLDownloader starts here</string>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+	</array>
+</dict>
+</plist>
