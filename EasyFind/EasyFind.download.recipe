@@ -41,6 +41,12 @@
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
+		<dict>
+			<key> •••••••   EndOfCheckPhase Comment   ••••••• </key>
+			<string>EndOfCheckPhase starts here</string>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
 	</array>
 </dict>
 </plist>
