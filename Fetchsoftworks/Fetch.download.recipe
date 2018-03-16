@@ -8,8 +8,6 @@
 	<string>com.github.rolfkocherhans.download.fetch</string>
 	<key>Input</key>
 	<dict>
-		<key>Modified-Recipe-From</key>
-		<string>com.github.jleggat.download.Fetch</string>
 		<key>NAME</key>
 		<string>Fetch</string>
 		<key>SEARCH_URL</key>
@@ -27,14 +25,14 @@
 				<key>re_pattern</key>
 				<string>(?P&lt;url&gt;fetch/download/Fetch_(?P&lt;version&gt;[0-9.]+)\.dmg)</string>
 				<key>url</key>
-				<string>%SEARCH_URL%</string>
+				<string>https://fetchsoftworks.com</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key> •••••••   URLDownloader Comment   ••••••• </key>
-			<string>UrlDownloader starts here</string>
+			<string>URLDownloader starts here</string>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
@@ -44,6 +42,36 @@
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key> •••••••   EndOfCheckPhase Comment   ••••••• </key>
+			<string>EndOfCheckPhase starts here</string>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key> •••••••   FileFinder Comment   ••••••• </key>
+			<string>FileFinder starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pattern</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/tmp*</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileFinder</string>
+		</dict>
+		<dict>
+			<key> •••••••   PathDeleter Comment   ••••••• </key>
+			<string>PathDeleter starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%found_filename%</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
