@@ -68,7 +68,8 @@
 				<key>file_content</key>
 				<string>#!/bin/bash
 # This is a comment
-mkdir ~/Desktop/Test_AAA_Folder
+defaults write "/Library/Preferences/com.fetchsoftworks.Fetch" RegistrantName %REGISTRANTNAME%
+defaults write "/Library/Preferences/com.fetchsoftworks.Fetch" SerialNumber %SERIALNUMBER%
 exit 0
 </string>
 				<key>file_mode</key>
