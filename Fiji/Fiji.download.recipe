@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Download the current release version of Fiji (zip/app)</string>
+	<string>Download the current  release version of Fiji (zip/app)</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download.fiji</string>
 	<key>Input</key>
