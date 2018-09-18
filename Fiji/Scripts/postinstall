@@ -6,6 +6,6 @@
 # to allow the built-in update mechanism to work.
 
 if [ -d "$3/Applications/Fiji.app" ]; then
+   echo chmod -R 777 "$3/Applications/Fiji.app"
    chmod -R 777 "$3/Applications/Fiji.app"
 fi
-
