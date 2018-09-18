@@ -7,3 +7,4 @@
 if [ -d "$3/Applications/Fiji.app" ]; then
    chmod -R 777 "$3/Applications/Fiji.app"
 fi
+
