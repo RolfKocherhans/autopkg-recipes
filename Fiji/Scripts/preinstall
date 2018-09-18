@@ -5,3 +5,4 @@
 if [ -d "$3/Applications/Fiji.app" ]; then
    rm -rf "$3/Applications/Fiji.app"
 fi
+
