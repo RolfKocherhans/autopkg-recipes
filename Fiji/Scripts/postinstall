@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Change permissions so that all users
+# have read and write permissions to the application. This is needed
+# to allow the built-in update mechanism to work.
+
+if [ -d "$3/Applications/Fiji.app" ]; then
+   chmod -R 777 "$3/Applications/Fiji.app"
+fi
