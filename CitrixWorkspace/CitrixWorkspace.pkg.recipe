@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Package the current release version of CitrixWorkspace (dmg/pkg)</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.pkg.citrixworkspace</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>CitrixWorkspace</string>
+		<key>NAMEWITHSPACE</key>
+		<string>Citrix Receiver</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.rolfkocherhans.download.citrixreceiver</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key> •••••••   FlatPkgUnpacker Comment   ••••••• </key>
+			<string>FlatPkgUnpacker starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack</string>
+				<key>flat_pkg_path</key>
+				<string>%pathname%/*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>FlatPkgUnpacker</string>
+		</dict>
+		<dict>
+			<key> •••••••   PkgPayloadUnpacker Comment   ••••••• </key>
+			<string>PkgPayloadUnpacker starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
+				<key>pkg_payload_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack/com.citrix.ICAClient.pkg/Payload</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
+		</dict>
+		<dict>
+			<key> •••••••   Versioner Comment   ••••••• </key>
+			<string>Versioner starts here (Substitute %NAME% with %NAMEWITHSPACE% from Input)</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload/Applications/%NAMEWITHSPACE%.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key> •••••••   PkgCopier Comment   ••••••• </key>
+			<string>PkgCopier starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%pathname%/*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
+</dict>
+</plist>
