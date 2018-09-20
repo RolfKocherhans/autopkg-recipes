@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rolfkocherhans.download.citrixreceiver</string>
+	<string>com.github.rolfkocherhans.download.citrixworkspace</string>
 	<key>Process</key>
 	<array>
 		<dict>
