@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>CitrixWorkspace</string>
 		<key>NAMEWITHSPACE</key>
-		<string>Citrix Receiver</string>
+		<string>Citrix Workspace</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0</string>
