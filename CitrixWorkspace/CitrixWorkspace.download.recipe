@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Download the current release version of CitrixWorkspace (dmg/pkg)</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.download.citrixworkspace</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>CitrixWorkspace</string>
+		<key>PROTOCOL</key>
+		<string>https:</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
+			<string>UrlTextSearcher starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(//downloads.citrix.com/[\d]+/CitrixWorkspaceApp\.dmg\?__gda__\=[\w]+)</string>
+				<key>url</key>
+				<string>https://www.citrix.com/downloads/workspace-app/mac/workspace-app-for-mac-latest.html</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>UrlDownloader starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>%PROTOCOL%%match%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key> •••••••   EndOfCheckPhase Comment   ••••••• </key>
+			<string>EndOfCheckPhase starts here</string>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
