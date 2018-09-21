@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Download the current release version of Anaconda (pkg)</string>
+	<key>Identifier</key>
+	<string>com.github.rolfkocherhans.download.anaconda</string>
+	<key>Input</key>
+	<dict>
+		<key>INSTALLER_TYPE</key>
+		<string>pkg</string>
+		<key>NAME</key>
+		<string>Anaconda</string>
+		<key>PYTHON_MAJOR_VERSION</key>
+		<string>3</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key> •••••••   URLTextSearcher Comment   ••••••• </key>
+			<string>UrlTextSearcher starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(?P&lt;url&gt;https\://repo\.anaconda\.com/archive/Anaconda%PYTHON_MAJOR_VERSION%-(?P&lt;version&gt;[0-9.]+)-MacOSX-x86_64\.%INSTALLER_TYPE%)</string>
+				<key>url</key>
+				<string>https://www.anaconda.com/download/#macos</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key> •••••••   URLDownloader Comment   ••••••• </key>
+			<string>URLDownloader starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%%PYTHON_MAJOR_VERSION%-%version%.%INSTALLER_TYPE%</string>
+				<key>url</key>
+				<string>%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key> •••••••   EndOfCheckPhase Comment   ••••••• </key>
+			<string>EndOfCheckPhase starts here</string>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
