@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Package the current release version of EasyFind with preinstall and postinstall script (zip/app)</string>
 	<key>Identifier</key>
-	<string>com.github.rolfkocherhans.pkg.easyfind</string>
+	<string>com.github.rolfkocherhans.pkg.easyfind2</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLEID</key>
