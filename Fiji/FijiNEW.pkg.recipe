@@ -60,6 +60,8 @@
 					<string>%NAME%-%version%</string>
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/payload</string>
+					<key>scripts</key>
+					<string>Scripts</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
