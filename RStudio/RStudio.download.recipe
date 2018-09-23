@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Download the current release version of RStudio (app/dmg)</string>
+	<string>Download the current release version of RStudio (dmg/app)</string>
 	<key>Identifier</key>
 	<string>com.github.rolfkocherhans.download.rstudio</string>
 	<key>Input</key>
