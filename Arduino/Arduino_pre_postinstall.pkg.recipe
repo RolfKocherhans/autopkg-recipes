@@ -48,6 +48,19 @@
 			<string>Versioner</string>
 		</dict>
 		<dict>
+			<key> •••••••   PkgRootCreator Comment   ••••••• </key>
+			<string>PkgRootCreator starts here</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict/>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
 			<key> •••••••   FileCreator Comment   ••••••• </key>
 			<string>FileCreator starts here</string>
 			<key>Arguments</key>
